@@ -1,5 +1,6 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import React from 'react'
-import { Text, View, ViewStyle } from 'react-native'
+import { Text, TouchableOpacity, View, ViewStyle } from 'react-native'
 
 const Wrapper: ViewStyle = {
   flex: 1,
@@ -7,10 +8,14 @@ const Wrapper: ViewStyle = {
   alignItems: 'center'
 }
 
-export const HomeScreen = () => {
+type Props = NativeStackScreenProps<any, 'home'>
+
+export const HomeScreen = ({ navigation: {navigate}}:Props) => {
   return (
     <View style={Wrapper}>
-      <Text>Home</Text>
+      <TouchableOpacity onPress={() => navigate('stack', { screen: 'movie', params: { id: "3" }})}>
+        <Text>Home</Text>
+      </TouchableOpacity>
     </View>
   )
 }

@@ -34,7 +34,9 @@
     "@react-navigation/native": "~6.0.1",
     "@react-navigation/native-stack": "^6.0.2",
     "@react-navigation/stack": "~6.2.1",
+    "@types/axios": "^0.14.0",
     "apisauce": "2.1.5",
+    "axios": "^0.27.2",
     "expo": "43.0.0",
     "expo-linear-gradient": "~10.0.3",
     "expo-localization": "~11.0.0",
@@ -199,12 +201,17 @@
       "react/no-unescaped-entities": 0,
       "react/prop-types": "off",
       "space-before-function-paren": 0,
-      "no-unused-vars": "off", 
-		  "unused-imports/no-unused-imports": "error",
-		  "unused-imports/no-unused-vars": [
-			  "warn",
-			  { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-		  ]
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ]
     }
   },
   "main": "node_modules/expo/AppEntry.js"

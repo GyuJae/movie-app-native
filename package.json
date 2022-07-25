@@ -88,6 +88,7 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-native": "4.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "expo-detox-hook": "1.0.10",
     "expo-modules-autolinking": "^0.8.1",
     "fbjs-scripts": "3.0.1",
@@ -149,7 +150,8 @@
     "plugins": [
       "@typescript-eslint",
       "react",
-      "react-native"
+      "react-native",
+      "unused-imports"
     ],
     "parserOptions": {
       "ecmaFeatures": {
@@ -191,13 +193,18 @@
       "comma-dangle": 0,
       "multiline-ternary": 0,
       "no-undef": 0,
-      "no-unused-vars": 0,
       "no-use-before-define": "off",
       "quotes": 0,
       "react-native/no-raw-text": 0,
       "react/no-unescaped-entities": 0,
       "react/prop-types": "off",
-      "space-before-function-paren": 0
+      "space-before-function-paren": 0,
+      "no-unused-vars": "off", 
+		  "unused-imports/no-unused-imports": "error",
+		  "unused-imports/no-unused-vars": [
+			  "warn",
+			  { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		  ]
     }
   },
   "main": "node_modules/expo/AppEntry.js"

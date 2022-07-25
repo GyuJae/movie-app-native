@@ -23,11 +23,11 @@ export const color = {
   /**
    * The screen background.
    */
-  background: palette.white,
+  background: palette.black,
   /**
    * The main tinting color.
    */
-  primary: palette.orange,
+  primary: palette.angry,
   /**
    * The main tinting color, but darker.
    */
@@ -47,7 +47,7 @@ export const color = {
   /**
    * Error messages and icons.
    */
-  error: palette.angry,
+  error: palette.orange,
 
   /**
    * Storybook background for Text stories, or any stories where

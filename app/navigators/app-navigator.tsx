@@ -7,7 +7,6 @@
 import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import {
   HomeScreen,
   DiscoveryScreen,
@@ -16,6 +15,9 @@ import {
 } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { color } from "../theme"
+import { capitalize } from "validate.js"
+import { Ionicons } from "@expo/vector-icons";
 
 // Tab Navigator
 export type TabParamsList = {
@@ -29,11 +31,47 @@ const Tab = createBottomTabNavigator<TabParamsList>()
 
 const AppTab = () => {
   return(
-    <Tab.Navigator>
-      <Tab.Screen name={'home'} component={HomeScreen} />
-      <Tab.Screen name={'discovery'} component={DiscoveryScreen} />
-      <Tab.Screen name={'community'} component={CommunityScreen} />
-      <Tab.Screen name={'search'} component={SearchScreen} />
+    <Tab.Navigator screenOptions={({route}) => ({
+      tabBarStyle: {
+        backgroundColor: color.background,
+      },
+      tabBarInactiveTintColor: color.dim,
+      tabBarActiveTintColor: color.primary,
+      title: capitalize(route.name),
+      headerShown: false 
+    })}>
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name='home' color={color} size={size} />
+          }
+        }}
+        name={'home'}
+        component={HomeScreen} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name='compass' color={color} size={size} />
+          }
+        }}
+        name={'discovery'}
+        component={DiscoveryScreen} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name='chatbubbles' color={color} size={size} />
+          }
+        }}
+        name={'community'}
+        component={CommunityScreen} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name='search' color={color} size={size} />
+          }
+        }}
+        name={'search'}
+        component={SearchScreen} />
     </Tab.Navigator>
   )
 }

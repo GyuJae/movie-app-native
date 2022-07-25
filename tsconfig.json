@@ -17,7 +17,8 @@
       "dom"
     ],
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "app"
   },
   "exclude": [
     "node_modules"
